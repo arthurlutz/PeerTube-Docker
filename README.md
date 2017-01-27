@@ -4,6 +4,7 @@
 
 Dockerfile for [PeerTube](https://github.com/Chocobozzz/PeerTube).
 
+FOR TESTING PURPOSE, DO NOT USE IN PRODUCTION !
 
 ## Get the image
 
@@ -19,6 +20,6 @@ Dockerfile for [PeerTube](https://github.com/Chocobozzz/PeerTube).
 
 ## Run the image
 
-    $ docker run --publish=9000:9000 yourname/peertube
+    $ docker run --publish=80:80 yourname/peertube
 
-Once the server is listening, you can test it at `http://localhost:9000`.
+Once the server is listening, you can test it at `http://localhost:80`. You can see the administrator password in the container logs.

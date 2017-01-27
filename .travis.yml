@@ -3,9 +3,9 @@ services:
 - docker
 before_install:
 - travis_retry docker build -t chocobozzz/peertube .
-- docker run -d --publish=9000:9000 chocobozzz/peertube
+- docker run -d --publish=80:80 chocobozzz/peertube
 script:
-- sleep 300 && curl http://localhost:9000
+- sleep 300 && curl http://localhost:80
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker push chocobozzz/peertube:latest
 env:
