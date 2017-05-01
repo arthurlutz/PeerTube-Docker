@@ -8,10 +8,12 @@ RUN apt-get -y upgrade
 RUN apt-get -y install ffmpeg postgresql-9.4 openssl sudo curl git build-essential nginx
 RUN apt-get clean
 
-# Install NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
-RUN apt-get -y install -y nodejs
-RUN npm install -g npm@3
+# Install NodeJS and yarn
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update
+RUN apt-get -y install -y nodejs yarn
 
 # Create peertube user
 RUN useradd -m -d /home/peertube_user -s /bin/bash -p peertube_user peertube_user
