@@ -1,4 +1,4 @@
-# PeerTube-Docker
+# PeerTube-Docker (unmaintained)
 
 [![Build Status](https://travis-ci.org/Chocobozzz/PeerTube-Docker.svg?branch=master)](https://travis-ci.org/Chocobozzz/PeerTube-Docker)
 
